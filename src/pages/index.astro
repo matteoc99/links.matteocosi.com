@@ -1,5 +1,8 @@
 ---
 import {Heart} from 'lucide-astro'
+import { Image } from 'astro:assets';
+import bg from '../assets/img/bg.jpeg'
+import fg from '../assets/img/fg.jpeg'
 ---
 <html lang="en">
 <head>
@@ -8,17 +11,23 @@ import {Heart} from 'lucide-astro'
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+
+    body {
+      background-image: radial-gradient(circle, theme('colors.blue.300') 5%, theme('colors.blue.100') 8%);
+      background-size: 30px 30px;
+    }
+
     .cta-button {
       @apply block py-3 px-6 rounded-full border-2 border-blue-500 text-blue-500 font-semibold text-center transition-all duration-300 ease-in-out hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-300;
     }
     </style>
 </head>
-<body class="h-screen w-screen overflow-hidden flex items-center justify-center bg-gray-200">
-<div class="max-w-xl w-1/2 mx-auto bg-white shadow-md rounded-2xl">
+<body class="min-h-screen min-w-screen overflow-x-hidden overflow-y-auto flex items-center justify-center bg-blue-100 py-12">
+<div class="max-w-xl min-w-80 md:min-w-96 mx-auto bg-white shadow-md rounded-2xl">
     <!-- Profile Image -->
     <div class="relative flex justify-center">
-        <img alt="background image" class="h-32 w-full rounded-2xl object-cover" src="bg.jpeg">
-        <img alt="profile picture" class="absolute -bottom-1/4 h-24 w-24 rounded-full border-4 border-white object-cover" src="fg.jpeg">
+        <Image alt="clouds background" class="h-32 w-full rounded-2xl object-cover" src={bg}/>
+        <Image alt="profile" class="absolute -bottom-1/4 h-24 w-24 rounded-full border-4 border-white object-cover" src={fg}/>
     </div>
 
     <div class="p-6">
@@ -32,7 +41,7 @@ import {Heart} from 'lucide-astro'
         <!-- Links Section -->
         <div class="mt-10 text-center">
             <p class="text-lg font-bold uppercase">Links</p>
-            <div class="space-y-4 mt-4 px-12">
+            <div class="space-y-4 mt-4 md:px-12">
                     <a href="https://github.com/matteoc99" class="cta-button" target="_blank"
                         aria-label="Github">Github</a>
 
@@ -48,6 +57,7 @@ import {Heart} from 'lucide-astro'
         <div class="mt-20 flex flex-col gap-2 items-center">
             <p class="text-xs text-gray-500 uppercase">Made with</p>
             <Heart class="text-red-700"/>
+            <p class="text-xs text-gray-500 uppercase">in South Tyrol</p>
         </div>
     </div>
 </div>
