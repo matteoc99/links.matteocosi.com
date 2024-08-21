@@ -1,7 +1,6 @@
 {
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "yarn@4.2.2",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
